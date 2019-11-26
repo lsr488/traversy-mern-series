@@ -2,8 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
-const items = require('./routes/api/items');
-
 const app = express();
 
 // BodyParser middleware
@@ -19,8 +17,13 @@ mongoose
 	.catch(err => console.log(err));
 
 // Use Routes
-	// any URL that points to api/items will use the items variable abov for the path name
-app.use('api/items', items);
+	// any URL that points to api/items will use the items variable above for the path name
+app.use('/api/items', require('./routes/api/items'));
+
+app.get('/', (req, res) => {
+	// console.log("HELLO");
+	res.send("HELLO");
+});
 
 // run server
 const port = process.env.PORT || 5000;
