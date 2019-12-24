@@ -4,10 +4,10 @@ import {
 	ListGroup,
 	ListGroupItem,
 	Button
-}, from 'reactstrap';
+} from 'reactstrap';
 import { 
 	CSSTransition, TransitionGroup
-}, from 'react-transition-group';
+} from 'react-transition-group';
 import uuid from 'uuid'; // DELETE ME
 
 class ShoppingList extends Component {
