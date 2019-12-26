@@ -1,7 +1,7 @@
 // where the actual state is going to go
 // where we check our actions
 import uuid from 'uuid';
-import { GET_ITEMS, ADD_ITEM, DELETE_ITEM }, from '../actions/types.js'
+import { GET_ITEMS, ADD_ITEM, DELETE_ITEM } from '../actions/types.js'
 
 const initialState = {
 	items: [
