@@ -12,7 +12,9 @@ export default function(state = initialState, action) {
   switch (action.type) {
     case GET_ITEMS:
       return {
-        ...state
+        ...state,
+        items: action.payload,
+        loading: false
       };
     case DELETE_ITEM:
     	console.log("Reducer DELETE_ITEM:", action.payload);
