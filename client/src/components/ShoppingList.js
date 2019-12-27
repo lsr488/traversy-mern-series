@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container,	ListGroup, ListGroupItem,	Button } from 'reactstrap';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { connect } from 'react-redux';
-import { getItems, deleteItem } from '../actions/itemActions';
+import { getItems, deleteItem, addItem } from '../actions/itemActions';
 import PropTypes from 'prop-types';
 
 class ShoppingList extends Component {
@@ -42,7 +42,8 @@ class ShoppingList extends Component {
 
 ShoppingList.propTypes = {
    getItems: PropTypes.func.isRequired,
-   //deleteItem: PropTypes.func.isRequired,
+   deleteItem: PropTypes.func.isRequired,
+   addItem: PropTypes.func.isRequired,
    item: PropTypes.object.isRequired
 };
 
@@ -52,6 +53,6 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getItems, deleteItem }
+  { getItems, deleteItem, addItem }
 )(ShoppingList);
 // mapStateToProps takes item state and turns/maps it into a component property to use in shopping list, ie this.props.items
