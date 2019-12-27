@@ -1,6 +1,5 @@
 // where the actual state is going to go
 // where we check our actions
-import uuid from 'uuid';
 import { GET_ITEMS, ADD_ITEM, DELETE_ITEM, ITEMS_LOADING } from '../actions/types';
 
 const initialState = {
@@ -20,7 +19,7 @@ export default function(state = initialState, action) {
     	console.log("Reducer DELETE_ITEM:", action.payload);
     	return {
     		...state,
-				items: state.items.filter(item => item.id !== action.payload)
+				items: state.items.filter(item => item._id !== action.payload)
     	};
   	case ADD_ITEM:
   	console.log("Reducer ADD_ITEM:", action.payload);
