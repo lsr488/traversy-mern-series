@@ -15,7 +15,6 @@ export const getItems = () => dispatch => {
 };
 
 export const addItem = (item) => dispatch => {
-	console.log("Action addItem:", item);
 	axios
 		.post('/api/items', item)
 		.then(res => 
@@ -28,7 +27,6 @@ export const addItem = (item) => dispatch => {
 };
 
 export const deleteItem = (id) => dispatch => {
-	console.log("Action deleteItem id:", id);
   axios.delete(`/api/items/${id}`).then(res => dispatch({
   		type: DELETE_ITEM,
   		payload: id

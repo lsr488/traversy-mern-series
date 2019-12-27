@@ -16,13 +16,11 @@ export default function(state = initialState, action) {
         loading: false
       };
     case DELETE_ITEM:
-    	console.log("Reducer DELETE_ITEM:", action.payload);
     	return {
     		...state,
 				items: state.items.filter(item => item._id !== action.payload)
     	};
   	case ADD_ITEM:
-  	console.log("Reducer ADD_ITEM:", action.payload);
   		return {
   			...state,
   			items: [action.payload, ...state.items]
