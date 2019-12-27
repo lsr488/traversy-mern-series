@@ -14,20 +14,25 @@ export const getItems = () => dispatch => {
 		)
 };
 
+export const addItem = (item) => dispatch => {
+	console.log("Action addItem:", item);
+	axios
+		.post('/api/items', item)
+		.then(res => 
+			dispatch({
+				type: ADD_ITEM,
+				payload: res.data
+			})
+		)
+
+};
+
 export const deleteItem = (id) => {
 	console.log("Action deleteItem id:", id);
   return {
     type: DELETE_ITEM,
     payload: id
   };
-};
-
-export const addItem = (item) => {
-	console.log("Action addItem:", item);
-	return {
-		type: ADD_ITEM,
-		payload: item
-	};
 };
 
 export const setItemsLoading = () => {
